@@ -27,11 +27,12 @@
         &copy; 2026 LSC Digital Foundry. Built for Ugandan Secondary Schools.
     </footer>
 
-    <!-- Application Logic & Syllabus-Aligned Database Script -->
+    <!-- Application Logic & Direct Repository PDF Linking -->
     <script>
         const curriculumData = {
             "Biology": {
                 icon: "🧬",
+                pdfFile: "biology-syllabus-lower-secondary.pdf",
                 classes: {
                     "Senior 1": {
                         terms: {
@@ -54,46 +55,12 @@
                                 }
                             }
                         }
-                    },
-                    "Senior 3": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Coordination & Response": { 
-                                        subtopics: ["The Human Eye & Accommodation", "The Central Nervous System"],
-                                        competency: "Learner understands how organisms detect and respond to internal and external stimuli.",
-                                        outcomes: "1. Describe the structure and function of the human eye.\n2. Explain reflex actions.",
-                                        activities: "Dissecting mammalian eyes (or examining models), testing pupil reflex.",
-                                        resources: "Eye models, dissection kits, chart of the nervous system."
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "Physics": {
-                icon: "⚡",
-                classes: {
-                    "Senior 1": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Introduction to Physics": { 
-                                        subtopics: ["Measurement of Length, Time & Mass", "Density and Force"],
-                                        competency: "Learner acquires basic measurement skills and understands physical quantities and SI units.",
-                                        outcomes: "1. Measure length, mass, and time accurately.\n2. Calculate density of regular and irregular objects.",
-                                        activities: "Using metre rules, stopwatches, and beam balances; displacement can experiments.",
-                                        resources: "Metre rules, measuring cylinders, spring balances, eureka cans."
-                                    }
-                                }
-                            }
-                        }
                     }
                 }
             },
             "Chemistry": {
                 icon: "🧪",
+                pdfFile: "CHEMISTRY-SYLLABUS_compr.pdf",
                 classes: {
                     "Senior 1": {
                         terms: {
@@ -112,8 +79,30 @@
                     }
                 }
             },
+            "Physics": {
+                icon: "⚡",
+                pdfFile: "PHYSICS_Syllabus_compr.pdf",
+                classes: {
+                    "Senior 1": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Introduction to Physics": { 
+                                        subtopics: ["Measurement of Length, Time & Mass", "Density and Force"],
+                                        competency: "Learner acquires basic measurement skills and understands physical quantities and SI units.",
+                                        outcomes: "1. Measure length, mass, and time accurately.\n2. Calculate density of regular and irregular objects.",
+                                        activities: "Using metre rules, stopwatches, and beam balances; displacement can experiments.",
+                                        resources: "Metre rules, measuring cylinders, spring balances, eureka cans."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "Mathematics": {
                 icon: "📐",
+                pdfFile: "Mathematics_Syllabus_compr.pdf",
                 classes: {
                     "Senior 1": {
                         terms: {
@@ -134,6 +123,7 @@
             },
             "Geography": {
                 icon: "🌍",
+                pdfFile: "Geography-Syllabus.pdf",
                 classes: {
                     "Senior 1": {
                         terms: {
@@ -154,6 +144,7 @@
             },
             "English": {
                 icon: "📚",
+                pdfFile: "ENGLISH-SYLLABUS_compr.pdf",
                 classes: {
                     "Senior 1": {
                         terms: {
@@ -174,6 +165,7 @@
             },
             "History": {
                 icon: "📜",
+                pdfFile: "HISTORY-AND-POLITICA_compr.pdf",
                 classes: {
                     "Senior 1": {
                         terms: {
@@ -194,6 +186,7 @@
             },
             "Physical Education": {
                 icon: "⚽",
+                pdfFile: "PHYSICAL_EDUCATION_compr.pdf",
                 classes: {
                     "Senior 1": {
                         terms: {
@@ -274,7 +267,8 @@
         function selectSubtopic(sub) { selectedSubtopic = sub; currentView = 'document'; activeTab = 'scheme'; renderApp(); }
 
         function renderDocumentView() {
-            const topicData = curriculumData[selectedSubject].classes[selectedClass].terms[selectedTerm].chapters[selectedChapter];
+            const subjObj = curriculumData[selectedSubject];
+            const topicData = subjObj.classes[selectedClass].terms[selectedTerm].chapters[selectedChapter];
             
             appContainer.innerHTML = `
                 <button onclick="currentView='subtopics'; renderApp();" class="text-emerald-400 text-sm font-medium mb-4 flex items-center">&larr; Back to Sub-topics</button>
@@ -286,8 +280,8 @@
                             <h2 class="text-xl md:text-2xl font-bold mt-1">${selectedSubtopic}</h2>
                         </div>
                         <div class="flex gap-2 w-full md:w-auto">
-                            <button onclick="triggerDownload('DOCX')" class="flex-1 md:flex-none bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2">📥 Download DOCX</button>
-                            <button onclick="triggerDownload('PDF')" class="flex-1 md:flex-none bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2">📑 Download PDF</button>
+                            <a href="./${subjObj.pdfFile}" target="_blank" class="flex-1 md:flex-none bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2">📥 Download Real Syllabus PDF</a>
+                            <button onclick="window.print()" class="flex-1 md:flex-none bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2">📑 Print Lesson Plan</button>
                         </div>
                     </div>
 
@@ -333,7 +327,7 @@
                                             <td class="p-3">${topicData.activities}</td>
                                             <td class="p-3">Group work, guided discovery, and practical investigations.</td>
                                             <td class="p-3">${topicData.resources}</td>
-                                            <td class="p-3">Official NCDC Lower Secondary Curriculum Syllabus & Teacher Guide.</td>
+                                            <td class="p-3">Official NCDC Lower Secondary Curriculum Syllabus.</td>
                                             <td class="p-3">Covered successfully.</td>
                                         </tr>
                                     </tbody>
@@ -404,11 +398,6 @@
                     `}
                 </div>
             `;
-        }
-
-        function triggerDownload(format) {
-            alert(`Preparing neat ${format} document for "${selectedSubtopic}". Download starting!`);
-            if (format === 'PDF') window.print();
         }
 
         renderApp();
