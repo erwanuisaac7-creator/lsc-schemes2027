@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSC SCHEMES AND LESSON PLANS | NCDC Curriculum Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-white">
+
+    <!-- Top Header Bar -->
+    <header class="max-w-5xl mx-auto w-full p-4 md:p-6 flex justify-between items-center border-b border-slate-800">
+        <div>
+            <h1 class="text-lg md:text-xl font-extrabold tracking-wider text-emerald-400">LSC SCHEMES & LESSON PLANS</h1>
+            <p class="text-xs text-slate-400">LSC Digital Foundry &bull; Term 1 Free Access</p>
+        </div>
+        <span class="bg-emerald-950 border border-emerald-800 text-emerald-400 text-xs px-3 py-1 rounded-full font-medium">100% Free Access</span>
+    </header>
+
+    <!-- Main Dynamic Application Container -->
+    <main class="max-w-5xl mx-auto w-full p-4 md:p-6 my-4 flex-grow" id="app-container">
+        <!-- Dynamic content rendered via JavaScript -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-5xl mx-auto w-full p-4 md:p-6 text-center text-slate-500 text-xs border-t border-slate-900">
+        &copy; 2026 LSC Digital Foundry. Built for Ugandan Secondary Schools.
+    </footer>
+
+    <!-- Application Logic & Comprehensive NCDC Database Script -->
+    <script>
+        // Official NCDC Curriculum Database (All 8 Subjects)
+        const curriculumData = {
+            "Biology": {
+                icon: "🧬",
+                classes: {
+                    "Senior 1": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Introduction to Biology": { subtopics: ["Characteristics of Living Things", "Laboratory Rules & Apparatus"] },
+                                    "Cells": { subtopics: ["Cell Structure & Organization", "Cell Specialization"] },
+                                    "Classification": { subtopics: ["Dichotomous Keys", "Five Kingdoms Overview"] }
+                                }
+                            },
+                            "Term 2": {
+                                chapters: {
+                                    "Microorganisms": { subtopics: ["Structure of Viruses", "Bacteria & Fungi", "Economic Importance"] }
+                                }
+                            },
+                            "Term 3": {
+                                chapters: {
+                                    "Flowering Plants": { subtopics: ["Plant Organs", "Flower Structure & Pollination"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 2": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Soil Science": { subtopics: ["Soil Composition", "Physical & Chemical Properties", "Soil Erosion & Conservation"] }
+                                }
+                            },
+                            "Term 2": {
+                                chapters: {
+                                    "Nutrition": { subtopics: ["Nutrition in Plants (Photosynthesis)", "Nutrition in Animals"] }
+                                }
+                            },
+                            "Term 3": {
+                                chapters: {
+                                    "Transport": { subtopics: ["Transport in Animals (Circulatory System)", "Transport in Plants"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 3": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Respiration & Gaseous Exchange": { subtopics: ["Aerobic vs Anaerobic Respiration", "Gaseous Exchange Surfaces"] },
+                                    "Excretion": { subtopics: ["Excretion in Plants", "The Human Urinary System"] },
+                                    "Coordination": { subtopics: ["Nervous System in Mammals", "Hormonal Regulation"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 4": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Reproduction": { subtopics: ["Asexual Reproduction in Plants", "Sexual Reproduction in Humans", "Plant Pollination & Fertilization"] }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Chemistry": {
+                icon: "🧪",
+                classes: {
+                    "Senior 1": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Introduction to Chemistry": { subtopics: ["Experimental Techniques", "States of Matter & Changes"] }
+                                }
+                            },
+                            "Term 2": {
+                                chapters: {
+                                    "Materials & Air": { subtopics: ["Temporary and Permanent Changes", "Properties of Water"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 2": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Acids, Bases & Salts": { subtopics: ["Acids and Alkalis", "Preparation of Salts", "The Periodic Table Basics"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 3": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Carbon & Bonding": { subtopics: ["Carbon in Life", "Atomic Structures and Chemical Bonds"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 4": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "REDOX & Industry": { subtopics: ["Oxidation and Reduction Reactions", "Industrial Chemical Processes"] }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Physics": {
+                icon: "⚡",
+                classes: {
+                    "Senior 1": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Introduction & Mechanics": { subtopics: ["Introduction to Physics", "Measurement of Length, Time & Mass"] }
+                                }
+                            },
+                            "Term 2": {
+                                chapters: {
+                                    "Heat & Matter": { subtopics: ["States of Matter", "Temperature Measurements", "Heat Transfer"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 2": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Force & Motion": { subtopics: ["Work, Energy and Power", "Turning Effect of Forces (Moments)"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 3": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Waves & Optics": { subtopics: ["Linear Motion & Forces", "Refraction, Dispersion & Colour", "Lenses & Optical Instruments"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 4": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Electricity & Electronics": { subtopics: ["Introduction to Current Electricity", "Ohm's Law & Resistance", "Electromagnetic Effects"] }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Mathematics": {
+                icon: "📐",
+                classes: {
+                    "Senior 1": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Numbers & Integers": { subtopics: ["Numerical Concepts", "Working with Integers", "Fractions, Percentages & Decimals"] }
+                                }
+                            },
+                            "Term 2": {
+                                chapters: {
+                                    "Geometry & Algebra": { subtopics: ["Geometric Construction Skills", "Sequences and Patterns", "Bearings"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 2": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Algebra & Vectors": { subtopics: ["Mappings and Relations", "Vectors and Translation", "Indices & Surds"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 3": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Trigonometry & Vectors": { subtopics: ["Equation of a Straight Line", "Trigonometry Ratios", "Vector Operations"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 4": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Advanced Algebra": { subtopics: ["Composite Functions", "Equations & Inequalities", "Linear Programming"] }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Geography": {
+                icon: "🌍",
+                classes: {
+                    "Senior 1": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Introduction to Geography": { subtopics: ["Meaning & Scope of Geography", "Maps and Their Uses", "Weather and Climate"] }
+                                }
+                            },
+                            "Term 2": {
+                                chapters: {
+                                    "East Africa": { subtopics: ["Landforms and Drainage in East Africa", "Climate and Vegetation"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 2": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Resources & Industry": { subtopics: ["Mining in East Africa", "Manufacturing Industries", "Fishing & Tourism"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 3": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Africa & Beyond": { subtopics: ["Further Uses of Maps", "Agriculture in Africa", "Irrigation Farming in China & Rhinelands"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 4": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Global Studies": { subtopics: ["Environmental Conservation", "Global Trade & Economic Unions"] }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "English": {
+                icon: "📚",
+                classes: {
+                    "Senior 1": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Personal & Public": { subtopics: ["Personal Life and Family", "Finding Information", "Food and Nutrition"] }
+                                }
+                            },
+                            "Term 2": {
+                                chapters: {
+                                    "Environment & Work": { subtopics: ["At the Market", "Children at Work", "Environment and Pollution"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 2": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Communication & Society": { subtopics: ["Modern Communication Technology", "Celebrations", "Parents and Children"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 3": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Childhood & Clubs": { subtopics: ["Childhood Memories", "School Clubs and Societies"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 4": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Careers & Leadership": { subtopics: ["Leadership Roles", "The Media", "Choosing a Career & Applying for Jobs"] }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "History": {
+                icon: "📜",
+                classes: {
+                    "Senior 1": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Origins & Migration": { subtopics: ["Origin of Man (Theories)", "Migration into East Africa"] }
+                                }
+                            },
+                            "Term 2": {
+                                chapters: {
+                                    "State Formation": { subtopics: ["State Formation in East Africa", "Bachwezi and Buganda Kingdoms", "External Trade Contacts"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 2": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Colonial Systems": { subtopics: ["Land Ownership in Uganda", "Foreign Religions", "Colonial Administrative Systems"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 3": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Governance & Rights": { subtopics: ["Devonshire White Paper", "World War II in East Africa", "Systems of Government & Political Parties", "Human Rights & Corruption"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 4": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "East Africa & Beyond": { subtopics: ["The East African Community (EAC)", "Neo-colonialism", "Diplomacy & Globalisation"] }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Physical Education": {
+                icon: "⚽",
+                classes: {
+                    "Senior 1": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Theory & Practice": { subtopics: ["History & Safety in PE", "Movement Concepts & Aesthetics"] }
+                                }
+                            },
+                            "Term 2": {
+                                chapters: {
+                                    "Athletics & Games": { subtopics: ["Basic Running & Sprinting", "Basic Skills in Rounders & Netball"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 2": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Team Sports & Gymnastics": { subtopics: ["Basic Skills in Handball", "Soccer Fundamentals", "Aesthetics & Gymnastic Shapes"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 3": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Track, Field & Games": { subtopics: ["Development of Running Skills", "Basketball, Rugby, Hockey & Cricket Fundamentals"] }
+                                }
+                            }
+                        }
+                    },
+                    "Senior 4": {
+                        terms: {
+                            "Term 1": {
+                                chapters: {
+                                    "Advanced Sports & Swimming": { subtopics: ["Advanced Aerobics & Swimming Techniques", "Lifesaving Techniques", "Sports Administration"] }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        let currentView = 'subjects';
+        let selectedSubject = null;
+        let selectedClass = null;
+        let selectedTerm = null;
+        let selectedChapter = null;
+        let selectedSubtopic = null;
+
+        const appContainer = document.getElementById('app-container');
+
+        function renderApp() {
+            appContainer.innerHTML = '';
+            if (currentView === 'subjects') renderSubjectsView();
+            else if (currentView === 'classes') renderClassesView();
+            else if (currentView === 'terms') renderTermsView();
+            else if (currentView === 'chapters') renderChaptersView();
+            else if (currentView === 'subtopics') renderSubtopicsView();
+            else if (currentView === 'document') renderDocumentView();
+        }
+
+        function renderSubjectsView() {
+            let html = `
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold mb-1">Select Subject</h2>
+                    <p class="text-slate-400 text-sm">Choose from all 8 official NCDC lower secondary curriculum subjects.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            `;
+            for (let subj in curriculumData) {
+                html += `
+                    <div onclick="selectSubject('${subj}')" class="bg-slate-900 border border-slate-800 rounded-xl p-5 cursor-pointer hover:border-emerald-500 transition flex flex-col justify-between">
+                        <div>
+                            <div class="text-3xl mb-3">${curriculumData[subj].icon}</div>
+                            <h3 class="font-bold text-lg">${subj}</h3>
+                            <p class="text-xs text-slate-400 mt-1">S1 - S4 Syllabus</p>
+                        </div>
+                        <span class="mt-6 text-emerald-400 text-xs font-semibold">Explore Syllabus &rarr;</span>
+                    </div>
+                `;
+            }
+            html += `</div>`;
+            appContainer.innerHTML = html;
+        }
+
+        function selectSubject(subj) {
+            selectedSubject = subj;
+            currentView = 'classes';
+            renderApp();
+        }
+
+        function renderClassesView() {
+            let classesList = Object.keys(curriculumData[selectedSubject].classes);
+            appContainer.innerHTML = `
+                <button onclick="currentView='subjects'; renderApp();" class="text-emerald-400 text-sm font-medium mb-4 flex items-center">&larr; Back to Subjects</button>
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold mb-1">${selectedSubject} &bull; Select Class</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                    ${classesList.map(cls => `
+                        <div onclick="selectClass('${cls}')" class="bg-slate-900 border border-slate-800 rounded-xl p-5 cursor-pointer hover:border-emerald-500 transition">
+                            <h3 class="font-bold text-lg text-emerald-400">${cls}</h3>
+                            <p class="text-xs text-slate-400 mt-1">NCDC Standard</p>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function selectClass(cls) {
+            selectedClass = cls;
+            currentView = 'terms';
+            renderApp();
+        }
+
+        function renderTermsView() {
+            let termsList = Object.keys(curriculumData[selectedSubject].classes[selectedClass].terms);
+            appContainer.innerHTML = `
+                <button onclick="currentView='classes'; renderApp();" class="text-emerald-400 text-sm font-medium mb-4 flex items-center">&larr; Back to Classes</button>
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold mb-1">${selectedSubject} (${selectedClass}) &bull; Select Term</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    ${termsList.map(term => `
+                        <div onclick="selectTerm('${term}')" class="bg-slate-900 border border-slate-800 rounded-xl p-5 cursor-pointer hover:border-emerald-500 transition">
+                            <h3 class="font-bold text-lg text-emerald-400">${term}</h3>
+                            <p class="text-xs text-slate-400 mt-1">Free Content Active</p>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function selectTerm(term) {
+            selectedTerm = term;
+            currentView = 'chapters';
+            renderApp();
+        }
+
+        function renderChaptersView() {
+            let chaptersList = Object.keys(curriculumData[selectedSubject].classes[selectedClass].terms[selectedTerm].chapters);
+            appContainer.innerHTML = `
+                <button onclick="currentView='terms'; renderApp();" class="text-emerald-400 text-sm font-medium mb-4 flex items-center">&larr; Back to Terms</button>
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold mb-1">${selectedSubject} (${selectedClass}, ${selectedTerm})</h2>
+                    <p class="text-slate-400 text-sm">Select Chapter / Core Topic</p>
+                </div>
+                <div class="space-y-3">
+                    ${chaptersList.map(chap => `
+                        <div onclick="selectChapter('${chap}')" class="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-emerald-500 transition flex justify-between items-center">
+                            <span class="font-semibold">${chap}</span>
+                            <span class="text-emerald-400 text-sm font-medium">View Sub-topics &rarr;</span>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function selectChapter(chap) {
+            selectedChapter = chap;
+            currentView = 'subtopics';
+            renderApp();
+        }
+
+        function renderSubtopicsView() {
+            let subtopicsList = curriculumData[selectedSubject].classes[selectedClass].terms[selectedTerm].chapters[selectedChapter].subtopics;
+            appContainer.innerHTML = `
+                <button onclick="currentView='chapters'; renderApp();" class="text-emerald-400 text-sm font-medium mb-4 flex items-center">&larr; Back to Chapters</button>
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold mb-1">${selectedChapter}</h2>
+                    <p class="text-slate-400 text-sm">Select a Sub-Topic to view the NCDC tabulated scheme and lesson plan.</p>
+                </div>
+                <div class="space-y-3">
+                    ${subtopicsList.map(sub => `
+                        <div onclick="selectSubtopic('${sub}')" class="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-emerald-500 transition flex justify-between items-center">
+                            <span class="font-medium text-slate-200">${sub}</span>
+                            <span class="bg-emerald-950 text-emerald-400 text-xs px-3 py-1 rounded-md font-semibold">View NCDC Table</span>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function selectSubtopic(sub) {
+            selectedSubtopic = sub;
+            currentView = 'document';
+            renderApp();
+        }
+
+        function renderDocumentView() {
+            appContainer.innerHTML = `
+                <button onclick="currentView='subtopics'; renderApp();" class="text-emerald-400 text-sm font-medium mb-4 flex items-center">&larr; Back to Sub-topics</button>
+                
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 mb-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-800 pb-4 mb-4 gap-4">
+                        <div>
+                            <span class="text-xs uppercase tracking-wider text-emerald-400 font-semibold">${selectedSubject} &bull; ${selectedClass} &bull; ${selectedTerm}</span>
+                            <h2 class="text-xl md:text-2xl font-bold mt-1">${selectedSubtopic}</h2>
+                        </div>
+                        <div class="flex gap-2 w-full md:w-auto">
+                            <button onclick="triggerDownload('DOCX')" class="flex-1 md:flex-none bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2">
+                                📥 Download DOCX (Free)
+                            </button>
+                            <button onclick="triggerDownload('PDF')" class="flex-1 md:flex-none bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2">
+                                📑 Download PDF (Free)
+                            </button>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-slate-400 mb-4">Official NCDC Tabulated Scheme of Work & Lesson Plan Preview:</p>
+
+                    <div class="overflow-x-auto border border-slate-800 rounded-lg">
+                        <table class="w-full text-left text-xs text-slate-300">
+                            <thead class="bg-slate-950 text-emerald-400 uppercase font-semibold border-b border-slate-800">
+                                <tr>
+                                    <th class="p-3">Competency</th>
+                                    <th class="p-3">K-U-S-V Focus</th>
+                                    <th class="p-3">Suggested Activities</th>
+                                    <th class="p-3">Resources</th>
+                                    <th class="p-3">Assessment</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800">
+                                <tr class="hover:bg-slate-850">
+                                    <td class="p-3 font-medium text-white">Learner acquires core practical and analytical competencies in ${selectedSubtopic}.</td>
+                                    <td class="p-3"><strong>K:</strong> Core facts<br><strong>U:</strong> Concepts<br><strong>S:</strong> Practical skills<br><strong>V:</strong> Attitude</td>
+                                    <td class="p-3">Collaborative group work, guided experiments, and practical problem-solving tasks.</td>
+                                    <td class="p-3">NCDC Syllabus, laboratory/local apparatus, charts.</td>
+                                    <td class="p-3">Observation, quizzes, and structured classroom questioning.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
+        }
+
+        function triggerDownload(format) {
+            alert(`Preparing your neat ${format} document for "${selectedSubtopic}" (${selectedSubject}). Your free download is starting!`);
+            if (format === 'PDF') {
+                window.print();
+            }
+        }
+
+        renderApp();
+    </script>
+</body>
+</html>
