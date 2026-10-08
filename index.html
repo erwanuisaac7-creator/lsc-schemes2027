@@ -9,7 +9,7 @@
 <body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-white">
 
     <!-- Top Header Bar -->
-    <header class="max-w-5xl mx-auto w-full p-4 md:p-6 flex justify-between items-center border-b border-slate-800">
+    <header class="max-w-6xl mx-auto w-full p-4 md:p-6 flex justify-between items-center border-b border-slate-800">
         <div>
             <h1 class="text-lg md:text-xl font-extrabold tracking-wider text-emerald-400">LSC SCHEMES & LESSON PLANS</h1>
             <p class="text-xs text-slate-400">LSC Digital Foundry &bull; Term 1 Free Access</p>
@@ -18,18 +18,17 @@
     </header>
 
     <!-- Main Dynamic Application Container -->
-    <main class="max-w-5xl mx-auto w-full p-4 md:p-6 my-4 flex-grow" id="app-container">
+    <main class="max-w-6xl mx-auto w-full p-4 md:p-6 my-4 flex-grow" id="app-container">
         <!-- Dynamic content rendered via JavaScript -->
     </main>
 
     <!-- Footer -->
-    <footer class="max-w-5xl mx-auto w-full p-4 md:p-6 text-center text-slate-500 text-xs border-t border-slate-900">
+    <footer class="max-w-6xl mx-auto w-full p-4 md:p-6 text-center text-slate-500 text-xs border-t border-slate-900">
         &copy; 2026 LSC Digital Foundry. Built for Ugandan Secondary Schools.
     </footer>
 
-    <!-- Application Logic & Comprehensive NCDC Database Script -->
+    <!-- Application Logic & Syllabus-Aligned Database Script -->
     <script>
-        // Official NCDC Curriculum Database (All 8 Subjects)
         const curriculumData = {
             "Biology": {
                 icon: "🧬",
@@ -38,38 +37,20 @@
                         terms: {
                             "Term 1": {
                                 chapters: {
-                                    "Introduction to Biology": { subtopics: ["Characteristics of Living Things", "Laboratory Rules & Apparatus"] },
-                                    "Cells": { subtopics: ["Cell Structure & Organization", "Cell Specialization"] },
-                                    "Classification": { subtopics: ["Dichotomous Keys", "Five Kingdoms Overview"] }
-                                }
-                            },
-                            "Term 2": {
-                                chapters: {
-                                    "Microorganisms": { subtopics: ["Structure of Viruses", "Bacteria & Fungi", "Economic Importance"] }
-                                }
-                            },
-                            "Term 3": {
-                                chapters: {
-                                    "Flowering Plants": { subtopics: ["Plant Organs", "Flower Structure & Pollination"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 2": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Soil Science": { subtopics: ["Soil Composition", "Physical & Chemical Properties", "Soil Erosion & Conservation"] }
-                                }
-                            },
-                            "Term 2": {
-                                chapters: {
-                                    "Nutrition": { subtopics: ["Nutrition in Plants (Photosynthesis)", "Nutrition in Animals"] }
-                                }
-                            },
-                            "Term 3": {
-                                chapters: {
-                                    "Transport": { subtopics: ["Transport in Animals (Circulatory System)", "Transport in Plants"] }
+                                    "Introduction to Biology": { 
+                                        subtopics: ["Characteristics of Living Things", "Laboratory Rules & Apparatus"],
+                                        competency: "Learner should understand what biology is, recognize living vs non-living things, and observe lab safety rules.",
+                                        outcomes: "1. State life characteristics.\n2. Identify common lab apparatus.\n3. Demonstrate safe handling of equipment.",
+                                        activities: "Group observation of potted plants and insects; drawing and labeling lab glassware.",
+                                        resources: "Living specimens, hand lenses, boiling tubes, microscopes, NCDC Syllabus."
+                                    },
+                                    "Cells": { 
+                                        subtopics: ["Cell Structure & Organization", "Cell Specialization"],
+                                        competency: "Learner appreciates that living things are made of cells and understands plant vs animal cell structures.",
+                                        outcomes: "1. Describe the structure of a generalized cell.\n2. Compare plant and animal cells.",
+                                        activities: "Making onion epidermal slides, staining with iodine, viewing under microscopes.",
+                                        resources: "Light microscopes, glass slides, cover slips, iodine solution, onion bulbs."
+                                    }
                                 }
                             }
                         }
@@ -78,64 +59,13 @@
                         terms: {
                             "Term 1": {
                                 chapters: {
-                                    "Respiration & Gaseous Exchange": { subtopics: ["Aerobic vs Anaerobic Respiration", "Gaseous Exchange Surfaces"] },
-                                    "Excretion": { subtopics: ["Excretion in Plants", "The Human Urinary System"] },
-                                    "Coordination": { subtopics: ["Nervous System in Mammals", "Hormonal Regulation"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 4": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Reproduction": { subtopics: ["Asexual Reproduction in Plants", "Sexual Reproduction in Humans", "Plant Pollination & Fertilization"] }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "Chemistry": {
-                icon: "🧪",
-                classes: {
-                    "Senior 1": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Introduction to Chemistry": { subtopics: ["Experimental Techniques", "States of Matter & Changes"] }
-                                }
-                            },
-                            "Term 2": {
-                                chapters: {
-                                    "Materials & Air": { subtopics: ["Temporary and Permanent Changes", "Properties of Water"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 2": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Acids, Bases & Salts": { subtopics: ["Acids and Alkalis", "Preparation of Salts", "The Periodic Table Basics"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 3": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Carbon & Bonding": { subtopics: ["Carbon in Life", "Atomic Structures and Chemical Bonds"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 4": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "REDOX & Industry": { subtopics: ["Oxidation and Reduction Reactions", "Industrial Chemical Processes"] }
+                                    "Coordination & Response": { 
+                                        subtopics: ["The Human Eye & Accommodation", "The Central Nervous System"],
+                                        competency: "Learner understands how organisms detect and respond to internal and external stimuli.",
+                                        outcomes: "1. Describe the structure and function of the human eye.\n2. Explain reflex actions.",
+                                        activities: "Dissecting mammalian eyes (or examining models), testing pupil reflex.",
+                                        resources: "Eye models, dissection kits, chart of the nervous system."
+                                    }
                                 }
                             }
                         }
@@ -149,39 +79,33 @@
                         terms: {
                             "Term 1": {
                                 chapters: {
-                                    "Introduction & Mechanics": { subtopics: ["Introduction to Physics", "Measurement of Length, Time & Mass"] }
-                                }
-                            },
-                            "Term 2": {
-                                chapters: {
-                                    "Heat & Matter": { subtopics: ["States of Matter", "Temperature Measurements", "Heat Transfer"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 2": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Force & Motion": { subtopics: ["Work, Energy and Power", "Turning Effect of Forces (Moments)"] }
+                                    "Introduction to Physics": { 
+                                        subtopics: ["Measurement of Length, Time & Mass", "Density and Force"],
+                                        competency: "Learner acquires basic measurement skills and understands physical quantities and SI units.",
+                                        outcomes: "1. Measure length, mass, and time accurately.\n2. Calculate density of regular and irregular objects.",
+                                        activities: "Using metre rules, stopwatches, and beam balances; displacement can experiments.",
+                                        resources: "Metre rules, measuring cylinders, spring balances, eureka cans."
+                                    }
                                 }
                             }
                         }
-                    },
-                    "Senior 3": {
+                    }
+                }
+            },
+            "Chemistry": {
+                icon: "🧪",
+                classes: {
+                    "Senior 1": {
                         terms: {
                             "Term 1": {
                                 chapters: {
-                                    "Waves & Optics": { subtopics: ["Linear Motion & Forces", "Refraction, Dispersion & Colour", "Lenses & Optical Instruments"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 4": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Electricity & Electronics": { subtopics: ["Introduction to Current Electricity", "Ohm's Law & Resistance", "Electromagnetic Effects"] }
+                                    "Introduction to Chemistry": { 
+                                        subtopics: ["Experimental Techniques", "States of Matter & Changes"],
+                                        competency: "Learner understands the particulate nature of matter and basic separation techniques.",
+                                        outcomes: "1. Describe solid, liquid, and gas states.\n2. Perform simple separation like filtration and distillation.",
+                                        activities: "Heating ice to steam experiments; separating a mixture of sand and salt.",
+                                        resources: "Bunsen burners, filter paper, beakers, thermometers."
+                                    }
                                 }
                             }
                         }
@@ -195,39 +119,13 @@
                         terms: {
                             "Term 1": {
                                 chapters: {
-                                    "Numbers & Integers": { subtopics: ["Numerical Concepts", "Working with Integers", "Fractions, Percentages & Decimals"] }
-                                }
-                            },
-                            "Term 2": {
-                                chapters: {
-                                    "Geometry & Algebra": { subtopics: ["Geometric Construction Skills", "Sequences and Patterns", "Bearings"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 2": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Algebra & Vectors": { subtopics: ["Mappings and Relations", "Vectors and Translation", "Indices & Surds"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 3": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Trigonometry & Vectors": { subtopics: ["Equation of a Straight Line", "Trigonometry Ratios", "Vector Operations"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 4": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Advanced Algebra": { subtopics: ["Composite Functions", "Equations & Inequalities", "Linear Programming"] }
+                                    "Numbers & Integers": { 
+                                        subtopics: ["Working with Integers", "Fractions, Percentages & Decimals"],
+                                        competency: "Learner applies numerical concepts and operations to solve everyday financial and mathematical problems.",
+                                        outcomes: "1. Perform operations on integers.\n2. Convert between fractions, decimals, and percentages.",
+                                        activities: "Real-life budgeting games, number line exercises.",
+                                        resources: "Calculators, graph paper, NCDC Mathematics syllabus."
+                                    }
                                 }
                             }
                         }
@@ -241,39 +139,13 @@
                         terms: {
                             "Term 1": {
                                 chapters: {
-                                    "Introduction to Geography": { subtopics: ["Meaning & Scope of Geography", "Maps and Their Uses", "Weather and Climate"] }
-                                }
-                            },
-                            "Term 2": {
-                                chapters: {
-                                    "East Africa": { subtopics: ["Landforms and Drainage in East Africa", "Climate and Vegetation"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 2": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Resources & Industry": { subtopics: ["Mining in East Africa", "Manufacturing Industries", "Fishing & Tourism"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 3": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Africa & Beyond": { subtopics: ["Further Uses of Maps", "Agriculture in Africa", "Irrigation Farming in China & Rhinelands"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 4": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Global Studies": { subtopics: ["Environmental Conservation", "Global Trade & Economic Unions"] }
+                                    "Introduction to Geography": { 
+                                        subtopics: ["Maps and Their Uses", "Weather and Climate"],
+                                        competency: "Learner interprets topographical maps and measures local weather elements.",
+                                        outcomes: "1. Read grid references and scale on maps.\n2. Record daily weather readings.",
+                                        activities: "Interpreting local school maps, setting up a weather station corner.",
+                                        resources: "Topographical maps, raingauges, thermometers, wind vanes."
+                                    }
                                 }
                             }
                         }
@@ -287,39 +159,13 @@
                         terms: {
                             "Term 1": {
                                 chapters: {
-                                    "Personal & Public": { subtopics: ["Personal Life and Family", "Finding Information", "Food and Nutrition"] }
-                                }
-                            },
-                            "Term 2": {
-                                chapters: {
-                                    "Environment & Work": { subtopics: ["At the Market", "Children at Work", "Environment and Pollution"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 2": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Communication & Society": { subtopics: ["Modern Communication Technology", "Celebrations", "Parents and Children"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 3": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Childhood & Clubs": { subtopics: ["Childhood Memories", "School Clubs and Societies"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 4": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Careers & Leadership": { subtopics: ["Leadership Roles", "The Media", "Choosing a Career & Applying for Jobs"] }
+                                    "Personal & Public": { 
+                                        subtopics: ["Personal Life and Family", "Finding Information"],
+                                        competency: "Learner communicates effectively about family, background, and extracts facts from texts.",
+                                        outcomes: "1. Write descriptions of family members.\n2. Skim and scan texts for specific information.",
+                                        activities: "Role-playing family introductions, reading comprehension exercises.",
+                                        resources: "English syllabus readers, newspapers, flashcards."
+                                    }
                                 }
                             }
                         }
@@ -333,39 +179,13 @@
                         terms: {
                             "Term 1": {
                                 chapters: {
-                                    "Origins & Migration": { subtopics: ["Origin of Man (Theories)", "Migration into East Africa"] }
-                                }
-                            },
-                            "Term 2": {
-                                chapters: {
-                                    "State Formation": { subtopics: ["State Formation in East Africa", "Bachwezi and Buganda Kingdoms", "External Trade Contacts"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 2": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Colonial Systems": { subtopics: ["Land Ownership in Uganda", "Foreign Religions", "Colonial Administrative Systems"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 3": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Governance & Rights": { subtopics: ["Devonshire White Paper", "World War II in East Africa", "Systems of Government & Political Parties", "Human Rights & Corruption"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 4": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "East Africa & Beyond": { subtopics: ["The East African Community (EAC)", "Neo-colonialism", "Diplomacy & Globalisation"] }
+                                    "Origins & Migration": { 
+                                        subtopics: ["Origin of Man (Theories)", "Migration into East Africa"],
+                                        competency: "Learner evaluates theories of human origin and traces migration routes into East Africa.",
+                                        outcomes: "1. Compare scientific and traditional creation theories.\n2. Map early migration streams.",
+                                        activities: "Group discussions on oral traditions, drawing migration maps.",
+                                        resources: "Atlas, historical charts, NCDC History guide."
+                                    }
                                 }
                             }
                         }
@@ -379,39 +199,13 @@
                         terms: {
                             "Term 1": {
                                 chapters: {
-                                    "Theory & Practice": { subtopics: ["History & Safety in PE", "Movement Concepts & Aesthetics"] }
-                                }
-                            },
-                            "Term 2": {
-                                chapters: {
-                                    "Athletics & Games": { subtopics: ["Basic Running & Sprinting", "Basic Skills in Rounders & Netball"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 2": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Team Sports & Gymnastics": { subtopics: ["Basic Skills in Handball", "Soccer Fundamentals", "Aesthetics & Gymnastic Shapes"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 3": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Track, Field & Games": { subtopics: ["Development of Running Skills", "Basketball, Rugby, Hockey & Cricket Fundamentals"] }
-                                }
-                            }
-                        }
-                    },
-                    "Senior 4": {
-                        terms: {
-                            "Term 1": {
-                                chapters: {
-                                    "Advanced Sports & Swimming": { subtopics: ["Advanced Aerobics & Swimming Techniques", "Lifesaving Techniques", "Sports Administration"] }
+                                    "Theory & Practice": { 
+                                        subtopics: ["History & Safety in PE", "Movement Concepts & Aesthetics"],
+                                        competency: "Learner understands basic safety rules in physical education and explores body movement awareness.",
+                                        outcomes: "1. Demonstrate safe warm-up routines.\n2. Execute fundamental locomotor movements.",
+                                        activities: "Led stretching exercises, agility course navigation.",
+                                        resources: "Cones, whistles, open playground, NCDC PE Syllabus."
+                                    }
                                 }
                             }
                         }
@@ -426,6 +220,7 @@
         let selectedTerm = null;
         let selectedChapter = null;
         let selectedSubtopic = null;
+        let activeTab = 'scheme';
 
         const appContainer = document.getElementById('app-container');
 
@@ -440,186 +235,180 @@
         }
 
         function renderSubjectsView() {
-            let html = `
-                <div class="mb-6">
-                    <h2 class="text-2xl font-bold mb-1">Select Subject</h2>
-                    <p class="text-slate-400 text-sm">Choose from all 8 official NCDC lower secondary curriculum subjects.</p>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            `;
+            let html = `<div class="mb-6"><h2 class="text-2xl font-bold mb-1">Select Subject</h2><p class="text-slate-400 text-sm">Choose from official NCDC lower secondary curriculum subjects.</p></div><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">`;
             for (let subj in curriculumData) {
-                html += `
-                    <div onclick="selectSubject('${subj}')" class="bg-slate-900 border border-slate-800 rounded-xl p-5 cursor-pointer hover:border-emerald-500 transition flex flex-col justify-between">
-                        <div>
-                            <div class="text-3xl mb-3">${curriculumData[subj].icon}</div>
-                            <h3 class="font-bold text-lg">${subj}</h3>
-                            <p class="text-xs text-slate-400 mt-1">S1 - S4 Syllabus</p>
-                        </div>
-                        <span class="mt-6 text-emerald-400 text-xs font-semibold">Explore Syllabus &rarr;</span>
-                    </div>
-                `;
+                html += `<div onclick="selectSubject('${subj}')" class="bg-slate-900 border border-slate-800 rounded-xl p-5 cursor-pointer hover:border-emerald-500 transition flex flex-col justify-between"><div><div class="text-3xl mb-3">${curriculumData[subj].icon}</div><h3 class="font-bold text-lg">${subj}</h3><p class="text-xs text-slate-400 mt-1">S1 - S4 Syllabus</p></div><span class="mt-6 text-emerald-400 text-xs font-semibold">Explore Syllabus &rarr;</span></div>`;
             }
             html += `</div>`;
             appContainer.innerHTML = html;
         }
 
-        function selectSubject(subj) {
-            selectedSubject = subj;
-            currentView = 'classes';
-            renderApp();
-        }
+        function selectSubject(subj) { selectedSubject = subj; currentView = 'classes'; renderApp(); }
 
         function renderClassesView() {
             let classesList = Object.keys(curriculumData[selectedSubject].classes);
-            appContainer.innerHTML = `
-                <button onclick="currentView='subjects'; renderApp();" class="text-emerald-400 text-sm font-medium mb-4 flex items-center">&larr; Back to Subjects</button>
-                <div class="mb-6">
-                    <h2 class="text-2xl font-bold mb-1">${selectedSubject} &bull; Select Class</h2>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                    ${classesList.map(cls => `
-                        <div onclick="selectClass('${cls}')" class="bg-slate-900 border border-slate-800 rounded-xl p-5 cursor-pointer hover:border-emerald-500 transition">
-                            <h3 class="font-bold text-lg text-emerald-400">${cls}</h3>
-                            <p class="text-xs text-slate-400 mt-1">NCDC Standard</p>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
+            appContainer.innerHTML = `<button onclick="currentView='subjects'; renderApp();" class="text-emerald-400 text-sm font-medium mb-4 flex items-center">&larr; Back to Subjects</button><div class="mb-6"><h2 class="text-2xl font-bold mb-1">${selectedSubject} &bull; Select Class</h2></div><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">${classesList.map(cls => `<div onclick="selectClass('${cls}')" class="bg-slate-900 border border-slate-800 rounded-xl p-5 cursor-pointer hover:border-emerald-500 transition"><h3 class="font-bold text-lg text-emerald-400">${cls}</h3><p class="text-xs text-slate-400 mt-1">NCDC Standard</p></div>`).join('')}</div>`;
         }
 
-        function selectClass(cls) {
-            selectedClass = cls;
-            currentView = 'terms';
-            renderApp();
-        }
+        function selectClass(cls) { selectedClass = cls; currentView = 'terms'; renderApp(); }
 
         function renderTermsView() {
             let termsList = Object.keys(curriculumData[selectedSubject].classes[selectedClass].terms);
-            appContainer.innerHTML = `
-                <button onclick="currentView='classes'; renderApp();" class="text-emerald-400 text-sm font-medium mb-4 flex items-center">&larr; Back to Classes</button>
-                <div class="mb-6">
-                    <h2 class="text-2xl font-bold mb-1">${selectedSubject} (${selectedClass}) &bull; Select Term</h2>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    ${termsList.map(term => `
-                        <div onclick="selectTerm('${term}')" class="bg-slate-900 border border-slate-800 rounded-xl p-5 cursor-pointer hover:border-emerald-500 transition">
-                            <h3 class="font-bold text-lg text-emerald-400">${term}</h3>
-                            <p class="text-xs text-slate-400 mt-1">Free Content Active</p>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
+            appContainer.innerHTML = `<button onclick="currentView='classes'; renderApp();" class="text-emerald-400 text-sm font-medium mb-4 flex items-center">&larr; Back to Classes</button><div class="mb-6"><h2 class="text-2xl font-bold mb-1">${selectedSubject} (${selectedClass}) &bull; Select Term</h2></div><div class="grid grid-cols-1 sm:grid-cols-3 gap-4">${termsList.map(term => `<div onclick="selectTerm('${term}')" class="bg-slate-900 border border-slate-800 rounded-xl p-5 cursor-pointer hover:border-emerald-500 transition"><h3 class="font-bold text-lg text-emerald-400">${term}</h3><p class="text-xs text-slate-400 mt-1">Free Content Active</p></div>`).join('')}</div>`;
         }
 
-        function selectTerm(term) {
-            selectedTerm = term;
-            currentView = 'chapters';
-            renderApp();
-        }
+        function selectTerm(term) { selectedTerm = term; currentView = 'chapters'; renderApp(); }
 
         function renderChaptersView() {
             let chaptersList = Object.keys(curriculumData[selectedSubject].classes[selectedClass].terms[selectedTerm].chapters);
-            appContainer.innerHTML = `
-                <button onclick="currentView='terms'; renderApp();" class="text-emerald-400 text-sm font-medium mb-4 flex items-center">&larr; Back to Terms</button>
-                <div class="mb-6">
-                    <h2 class="text-2xl font-bold mb-1">${selectedSubject} (${selectedClass}, ${selectedTerm})</h2>
-                    <p class="text-slate-400 text-sm">Select Chapter / Core Topic</p>
-                </div>
-                <div class="space-y-3">
-                    ${chaptersList.map(chap => `
-                        <div onclick="selectChapter('${chap}')" class="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-emerald-500 transition flex justify-between items-center">
-                            <span class="font-semibold">${chap}</span>
-                            <span class="text-emerald-400 text-sm font-medium">View Sub-topics &rarr;</span>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
+            appContainer.innerHTML = `<button onclick="currentView='terms'; renderApp();" class="text-emerald-400 text-sm font-medium mb-4 flex items-center">&larr; Back to Terms</button><div class="mb-6"><h2 class="text-2xl font-bold mb-1">${selectedSubject} (${selectedClass}, ${selectedTerm})</h2><p class="text-slate-400 text-sm">Select Chapter / Core Topic</p></div><div class="space-y-3">${chaptersList.map(chap => `<div onclick="selectChapter('${chap}')" class="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-emerald-500 transition flex justify-between items-center"><span class="font-semibold">${chap}</span><span class="text-emerald-400 text-sm font-medium">View Sub-topics &rarr;</span></div>`).join('')}</div>`;
         }
 
-        function selectChapter(chap) {
-            selectedChapter = chap;
-            currentView = 'subtopics';
-            renderApp();
-        }
+        function selectChapter(chap) { selectedChapter = chap; currentView = 'subtopics'; renderApp(); }
 
         function renderSubtopicsView() {
             let subtopicsList = curriculumData[selectedSubject].classes[selectedClass].terms[selectedTerm].chapters[selectedChapter].subtopics;
-            appContainer.innerHTML = `
-                <button onclick="currentView='chapters'; renderApp();" class="text-emerald-400 text-sm font-medium mb-4 flex items-center">&larr; Back to Chapters</button>
-                <div class="mb-6">
-                    <h2 class="text-2xl font-bold mb-1">${selectedChapter}</h2>
-                    <p class="text-slate-400 text-sm">Select a Sub-Topic to view the NCDC tabulated scheme and lesson plan.</p>
-                </div>
-                <div class="space-y-3">
-                    ${subtopicsList.map(sub => `
-                        <div onclick="selectSubtopic('${sub}')" class="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-emerald-500 transition flex justify-between items-center">
-                            <span class="font-medium text-slate-200">${sub}</span>
-                            <span class="bg-emerald-950 text-emerald-400 text-xs px-3 py-1 rounded-md font-semibold">View NCDC Table</span>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
+            appContainer.innerHTML = `<button onclick="currentView='chapters'; renderApp();" class="text-emerald-400 text-sm font-medium mb-4 flex items-center">&larr; Back to Chapters</button><div class="mb-6"><h2 class="text-2xl font-bold mb-1">${selectedChapter}</h2><p class="text-slate-400 text-sm">Select a Sub-Topic to open the NCDC Scheme of Work or Lesson Plan.</p></div><div class="space-y-3">${subtopicsList.map(sub => `<div onclick="selectSubtopic('${sub}')" class="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-emerald-500 transition flex justify-between items-center"><span class="font-medium text-slate-200">${sub}</span><span class="bg-emerald-950 text-emerald-400 text-xs px-3 py-1 rounded-md font-semibold">Open Documents &rarr;</span></div>`).join('')}</div>`;
         }
 
-        function selectSubtopic(sub) {
-            selectedSubtopic = sub;
-            currentView = 'document';
-            renderApp();
-        }
+        function selectSubtopic(sub) { selectedSubtopic = sub; currentView = 'document'; activeTab = 'scheme'; renderApp(); }
 
         function renderDocumentView() {
+            const topicData = curriculumData[selectedSubject].classes[selectedClass].terms[selectedTerm].chapters[selectedChapter];
+            
             appContainer.innerHTML = `
                 <button onclick="currentView='subtopics'; renderApp();" class="text-emerald-400 text-sm font-medium mb-4 flex items-center">&larr; Back to Sub-topics</button>
                 
-                <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 mb-6">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-800 pb-4 mb-4 gap-4">
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 md:p-6 mb-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-800 pb-4 mb-6 gap-4">
                         <div>
                             <span class="text-xs uppercase tracking-wider text-emerald-400 font-semibold">${selectedSubject} &bull; ${selectedClass} &bull; ${selectedTerm}</span>
                             <h2 class="text-xl md:text-2xl font-bold mt-1">${selectedSubtopic}</h2>
                         </div>
                         <div class="flex gap-2 w-full md:w-auto">
-                            <button onclick="triggerDownload('DOCX')" class="flex-1 md:flex-none bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2">
-                                📥 Download DOCX (Free)
-                            </button>
-                            <button onclick="triggerDownload('PDF')" class="flex-1 md:flex-none bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2">
-                                📑 Download PDF (Free)
-                            </button>
+                            <button onclick="triggerDownload('DOCX')" class="flex-1 md:flex-none bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2">📥 Download DOCX</button>
+                            <button onclick="triggerDownload('PDF')" class="flex-1 md:flex-none bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2">📑 Download PDF</button>
                         </div>
                     </div>
 
-                    <p class="text-xs text-slate-400 mb-4">Official NCDC Tabulated Scheme of Work & Lesson Plan Preview:</p>
-
-                    <div class="overflow-x-auto border border-slate-800 rounded-lg">
-                        <table class="w-full text-left text-xs text-slate-300">
-                            <thead class="bg-slate-950 text-emerald-400 uppercase font-semibold border-b border-slate-800">
-                                <tr>
-                                    <th class="p-3">Competency</th>
-                                    <th class="p-3">K-U-S-V Focus</th>
-                                    <th class="p-3">Suggested Activities</th>
-                                    <th class="p-3">Resources</th>
-                                    <th class="p-3">Assessment</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-slate-800">
-                                <tr class="hover:bg-slate-850">
-                                    <td class="p-3 font-medium text-white">Learner acquires core practical and analytical competencies in ${selectedSubtopic}.</td>
-                                    <td class="p-3"><strong>K:</strong> Core facts<br><strong>U:</strong> Concepts<br><strong>S:</strong> Practical skills<br><strong>V:</strong> Attitude</td>
-                                    <td class="p-3">Collaborative group work, guided experiments, and practical problem-solving tasks.</td>
-                                    <td class="p-3">NCDC Syllabus, laboratory/local apparatus, charts.</td>
-                                    <td class="p-3">Observation, quizzes, and structured classroom questioning.</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="flex border-b border-slate-800 mb-6 gap-6">
+                        <button onclick="activeTab='scheme'; renderApp();" class="pb-3 text-sm font-bold border-b-2 ${activeTab === 'scheme' ? 'border-emerald-400 text-emerald-400' : 'border-transparent text-slate-400 hover:text-white'} transition">📋 11-Column Scheme of Work</button>
+                        <button onclick="activeTab='lessonplan'; renderApp();" class="pb-3 text-sm font-bold border-b-2 ${activeTab === 'lessonplan' ? 'border-emerald-400 text-emerald-400' : 'border-transparent text-slate-400 hover:text-white'} transition">📖 Detailed Lesson Plan</button>
                     </div>
+
+                    ${activeTab === 'scheme' ? `
+                        <div class="space-y-4">
+                            <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 text-xs flex flex-wrap gap-4 text-slate-300">
+                                <div><strong>School:</strong> All Saints Seed SS - Oluvu</div>
+                                <div><strong>Teacher:</strong> Mr. Eswanu Isaac</div>
+                                <div><strong>Subject:</strong> ${selectedSubject}</div>
+                                <div><strong>Class:</strong> ${selectedClass}</div>
+                                <div><strong>Term:</strong> ${selectedTerm}</div>
+                            </div>
+                            <div class="overflow-x-auto border border-slate-800 rounded-lg">
+                                <table class="w-full text-left text-xs text-slate-300 whitespace-nowrap">
+                                    <thead class="bg-slate-950 text-emerald-400 uppercase font-semibold border-b border-slate-800">
+                                        <tr>
+                                            <th class="p-3">Week</th>
+                                            <th class="p-3">Periods</th>
+                                            <th class="p-3">Theme / Topic</th>
+                                            <th class="p-3">Sub-Topic</th>
+                                            <th class="p-3">Competency</th>
+                                            <th class="p-3">Learning Outcomes</th>
+                                            <th class="p-3">Learning Activities</th>
+                                            <th class="p-3">Methodology</th>
+                                            <th class="p-3">Resources</th>
+                                            <th class="p-3">References</th>
+                                            <th class="p-3">Remarks</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-800">
+                                        <tr class="hover:bg-slate-850">
+                                            <td class="p-3">Week 1-2</td>
+                                            <td class="p-3">4 Periods</td>
+                                            <td class="p-3">${selectedChapter}</td>
+                                            <td class="p-3 font-medium text-white">${selectedSubtopic}</td>
+                                            <td class="p-3">${topicData.competency}</td>
+                                            <td class="p-3">${topicData.outcomes}</td>
+                                            <td class="p-3">${topicData.activities}</td>
+                                            <td class="p-3">Group work, guided discovery, and practical investigations.</td>
+                                            <td class="p-3">${topicData.resources}</td>
+                                            <td class="p-3">Official NCDC Lower Secondary Curriculum Syllabus & Teacher Guide.</td>
+                                            <td class="p-3">Covered successfully.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    ` : `
+                        <div class="space-y-6 text-xs text-slate-300">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 bg-slate-950 p-4 rounded-lg border border-slate-800">
+                                <div><strong>School:</strong> All Saints Seed SS - Oluvu</div>
+                                <div><strong>Date / Time:</strong> 2026 Academic Term</div>
+                                <div><strong>Subject:</strong> ${selectedSubject}</div>
+                                <div><strong>Class & Section:</strong> ${selectedClass}</div>
+                                <div><strong>Term & Year:</strong> ${selectedTerm}, 2026</div>
+                                <div><strong>Duration:</strong> 40 Minutes</div>
+                                <div><strong>Teacher:</strong> Mr. Eswanu Isaac</div>
+                            </div>
+
+                            <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 space-y-2">
+                                <div><strong>Topic:</strong> ${selectedChapter}</div>
+                                <div><strong>Subtopic:</strong> ${selectedSubtopic}</div>
+                                <div><strong>Competency:</strong> ${topicData.competency}</div>
+                                <div><strong>Learning Outcomes:</strong> ${topicData.outcomes}</div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="bg-slate-950 p-3 rounded-lg border border-slate-800"><strong class="text-emerald-400">Generic Skills:</strong><p class="mt-1">Critical thinking, collaboration, and communication.</p></div>
+                                <div class="bg-slate-950 p-3 rounded-lg border border-slate-800"><strong class="text-emerald-400">Core Values:</strong><p class="mt-1">Integrity, responsibility, and positive attitude.</p></div>
+                                <div class="bg-slate-950 p-3 rounded-lg border border-slate-800"><strong class="text-emerald-400">Cross-Cutting Issues:</strong><p class="mt-1">Environmental awareness and health education.</p></div>
+                            </div>
+
+                            <div>
+                                <h3 class="font-bold text-sm text-emerald-400 mb-2">Lesson Presentation (Step-by-Step)</h3>
+                                <div class="overflow-x-auto border border-slate-800 rounded-lg">
+                                    <table class="w-full text-left text-xs text-slate-300">
+                                        <thead class="bg-slate-950 text-emerald-400 uppercase font-semibold border-b border-slate-800">
+                                            <tr>
+                                                <th class="p-3">Time / Phase</th>
+                                                <th class="p-3">Teacher's Activity</th>
+                                                <th class="p-3">Learners' Activity</th>
+                                                <th class="p-3">Assessment Strategy</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-slate-800">
+                                            <tr>
+                                                <td class="p-3 font-medium">5 Mins<br><span class="text-slate-500">Introduction</span></td>
+                                                <td class="p-3">Introduces the subtopic "${selectedSubtopic}" and organizes learners into collaborative groups.</td>
+                                                <td class="p-3">Form groups, listen to instructions, and organize learning materials.</td>
+                                                <td class="p-3"><strong>Observation:</strong> Group readiness.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-3 font-medium">25 Mins<br><span class="text-slate-500">Lesson Development</span></td>
+                                                <td class="p-3">Guides learners through: ${topicData.activities}</td>
+                                                <td class="p-3">Perform hands-on tasks, record findings, and discuss outcomes with peers.</td>
+                                                <td class="p-3"><strong>Conversation:</strong> Guided questioning.<br><strong>Product:</strong> Group reports.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-3 font-medium">10 Mins<br><span class="text-slate-500">Conclusion</span></td>
+                                                <td class="p-3">Leads plenary review, clarifies concepts, and assigns follow-up revision tasks.</td>
+                                                <td class="p-3">Present findings, ask questions, and copy lesson summary notes.</td>
+                                                <td class="p-3"><strong>Observation:</strong> Class participation.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    `}
                 </div>
             `;
         }
 
         function triggerDownload(format) {
-            alert(`Preparing your neat ${format} document for "${selectedSubtopic}" (${selectedSubject}). Your free download is starting!`);
-            if (format === 'PDF') {
-                window.print();
-            }
+            alert(`Preparing neat ${format} document for "${selectedSubtopic}". Download starting!`);
+            if (format === 'PDF') window.print();
         }
 
         renderApp();
